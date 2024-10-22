@@ -1,12 +1,14 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
+import xoTypeScript from "eslint-config-xo-typescript";
 
 export default [
   { files: ["**/*.{js,mjs,cjs,ts}"] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  ...xoTypeScript,
   {
     rules: {
       "@stylistic/quotes": "off",
