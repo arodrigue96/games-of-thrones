@@ -19,6 +19,7 @@ export default [
       "@stylistic/function-paren-newline": "off",
       "@stylistic/arrow-parens": "off",
       "@stylistic/operator-linebreak": "off",
+      "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     },
   },
 ];
