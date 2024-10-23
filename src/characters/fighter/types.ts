@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/consistent-type-definitions */
 import type { Character } from "../character/types";
 
 export interface Fighter extends Character {
