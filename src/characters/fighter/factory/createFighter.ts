@@ -1,5 +1,8 @@
 import type { CharacterData } from "../../character/types";
 import type { Fighter, SkillLevel } from "../types";
+import createCharacter from "../../character/factory/createCharacter";
+
+const fighterPhrase = "Primero pego y luego pregunto";
 
 const createFighter = (
   characterData: CharacterData,
@@ -7,18 +10,9 @@ const createFighter = (
   weapon: string,
 ): Fighter => {
   const fighter: Fighter = {
-    name: characterData.name,
-    lastName: characterData.lastName,
-    age: characterData.age,
-    isAlive: true,
+    ...createCharacter(characterData, fighterPhrase),
     skillLevel,
     weapon,
-    die() {
-      this.isAlive = false;
-    },
-    speak() {
-      return "Primero pego y luego pregunto";
-    },
   };
 
   return fighter;
