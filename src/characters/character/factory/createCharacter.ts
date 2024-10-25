@@ -9,7 +9,7 @@ const createCharacter = (
     lastName,
     age,
     isAlive: true,
-    phrase: "",
+    phrase,
     die() {
       this.isAlive = false;
     },
