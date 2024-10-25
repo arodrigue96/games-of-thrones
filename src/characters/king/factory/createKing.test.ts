@@ -18,9 +18,8 @@ describe("Given the createKing function", () => {
       const expectedPhrase = "Vais a morir todos";
 
       const newKing: King = createKing({ name, lastName, age }, yearsOfReign);
-      const { phrase } = newKing;
 
-      expect(phrase).toBe(expectedPhrase);
+      expect(newKing.phrase).toBe(expectedPhrase);
     });
 
     test("Then it should return a King who can die", () => {
