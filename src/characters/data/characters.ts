@@ -4,6 +4,9 @@ import createFighter from "../fighter/factory/createFighter";
 import { type Fighter } from "../fighter/types";
 import createKing from "../king/factory/createKing";
 import { type King } from "../king/types";
+import { createSquire } from "../squire/factory/createSquire";
+import { type Squire } from "../squire/types";
+import type { Character } from "../character/types";
 
 export const joffrey: King = createKing(
   {
@@ -34,3 +37,13 @@ export const tyrion: Advisor = createAdvisor(
   },
   daenerys,
 );
+
+export const broon: Squire = createSquire({ name: "Bronn", age: 40 }, 8, jaime);
+
+export const characters: Character[] = [
+  joffrey,
+  jaime,
+  daenerys,
+  tyrion,
+  broon,
+];
