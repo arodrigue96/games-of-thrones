@@ -1,6 +1,5 @@
-import type { Character, CharacterData } from "../character/types";
+import type { Character } from "../character/types";
 
-export interface Advisor extends CharacterData {
+export interface Advisor extends Character {
   advisedCharacter: Character;
-  speak: () => "No sé por qué, pero creo que voy a morir pronto";
 }

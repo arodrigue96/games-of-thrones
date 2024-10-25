@@ -1,7 +1,9 @@
-import createFighter from "../fighter/factory/createFighter.js";
+import createAdvisor from "../advisor/factory/createAdvisor";
+import { type Advisor } from "../advisor/types";
+import createFighter from "../fighter/factory/createFighter";
 import { type Fighter } from "../fighter/types";
-import createKing from "../king/factory/createKing.js";
-import { type King } from "../king/types.js";
+import createKing from "../king/factory/createKing";
+import { type King } from "../king/types";
 
 export const joffrey: King = createKing(
   {
@@ -22,4 +24,13 @@ export const daenerys: Fighter = createFighter(
   { name: "Daenerys", lastName: "Targaryen", age: 16 },
   9,
   "Drogon",
+);
+
+export const tyrion: Advisor = createAdvisor(
+  {
+    name: "Tyrion",
+    lastName: "Lannister",
+    age: 32,
+  },
+  daenerys,
 );
