@@ -1,5 +1,5 @@
-import createFighter from "../characters/fighter/factory/createFighter.js";
-import { type Fighter } from "../characters/fighter/types";
+import createFighter from "../fighter/factory/createFighter.js";
+import { type Fighter } from "../fighter/types";
 
 export const jaime: Fighter = createFighter(
   { name: "Jaime", lastName: "Lannister", age: 43 },
