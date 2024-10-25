@@ -1,6 +1,5 @@
-import type { CharacterData } from "../character/types";
+import type { Character } from "../character/types";
 
-export interface King extends CharacterData {
+export interface King extends Character {
   yearsOfReign: number;
-  speak: () => "Vais a morir todos";
 }
