@@ -1,14 +1,15 @@
 import { type CharacterData, type Character } from "../types";
 
 const createCharacter = (
-  characterData: CharacterData,
+  { name, lastName, age }: CharacterData,
   phrase: string,
 ): Character => {
   const newCharacter: Character = {
-    name: characterData.name,
-    lastName: characterData.lastName,
-    age: characterData.age,
+    name,
+    lastName,
+    age,
     isAlive: true,
+    phrase: "",
     die() {
       this.isAlive = false;
     },

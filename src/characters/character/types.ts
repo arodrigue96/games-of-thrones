@@ -5,6 +5,7 @@ export interface CharacterData {
 }
 
 export interface Character extends CharacterData {
+  phrase: string;
   isAlive: boolean;
   die: () => void;
   speak: () => string;
