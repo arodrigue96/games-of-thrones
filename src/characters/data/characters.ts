@@ -1,10 +1,10 @@
-import createAdvisor from "../advisor/factory/createAdvisor";
+import createAdvisor from "../advisor/factory/createAdvisor.js";
 import { type Advisor } from "../advisor/types";
-import createFighter from "../fighter/factory/createFighter";
+import createFighter from "../fighter/factory/createFighter.js";
 import { type Fighter } from "../fighter/types";
-import createKing from "../king/factory/createKing";
+import createKing from "../king/factory/createKing.js";
 import { type King } from "../king/types";
-import { createSquire } from "../squire/factory/createSquire";
+import { createSquire } from "../squire/factory/createSquire.js";
 import { type Squire } from "../squire/types";
 import type { Character } from "../character/types";
 

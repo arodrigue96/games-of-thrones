@@ -1,6 +1,6 @@
 import type { CharacterData } from "../../character/types";
 import type { Fighter, SkillLevel } from "../types";
-import createCharacter from "../../character/factory/createCharacter";
+import createCharacter from "../../character/factory/createCharacter.js";
 
 const fighterPhrase = "Primero pego y luego pregunto";
 
