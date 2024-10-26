@@ -1,4 +1,4 @@
-import createCharacter from "../../character/factory/createCharacter";
+import createCharacter from "../../character/factory/createCharacter.js";
 import { type Character, type CharacterData } from "../../character/types";
 import { type Advisor } from "../types";
 
