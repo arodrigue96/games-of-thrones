@@ -109,3 +109,7 @@ ul {
   width: 15px;
   height: 15px;
 }
+
+.card__image--dead {
+  rotate: 180deg;
+}
