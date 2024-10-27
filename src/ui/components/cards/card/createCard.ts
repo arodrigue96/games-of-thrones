@@ -1,7 +1,7 @@
 import { type Character } from "../../../../characters/character/types";
 
-const createCard = (character: Character): HTMLElement => {
-  const card = document.createElement("article");
+const createCard = (character: Character): HTMLLIElement => {
+  const card = document.createElement("li");
   card.classList.add("card");
 
   const cardInfo = document.createElement("div");
@@ -9,7 +9,7 @@ const createCard = (character: Character): HTMLElement => {
 
   const cardTitle = document.createElement("h2");
   cardTitle.classList.add("card__title");
-  cardTitle.textContent = `${character.name} ${character.lastName}`;
+  cardTitle.textContent = `${character.name} ${character.lastName ?? ""}`;
 
   cardInfo.appendChild(cardTitle);
   card.appendChild(cardInfo);
