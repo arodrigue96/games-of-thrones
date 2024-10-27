@@ -1,4 +1,4 @@
-import createCardsContainer from "./components/cards/createCardsContainer.js";
+import createMainContainer from "./components/cards/createMainContainer.js";
 import createMainHeader from "./components/header/createMainHeader.js";
 
 const root = document.querySelector(".root");
@@ -8,4 +8,4 @@ if (!root) {
 }
 
 root.appendChild(createMainHeader());
-root.appendChild(createCardsContainer());
+root.appendChild(createMainContainer());
