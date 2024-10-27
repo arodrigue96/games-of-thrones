@@ -68,16 +68,26 @@ ul {
   box-shadow: 1px 1px 1px #000;
 }
 
-.card__title {
-  font-size: 1.4rem;
-  padding: 20px;
-}
-
 .card__image {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  width: auto;
   height: 250px;
-  max-width: auto;
   object-fit: cover;
   object-position: top;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.card__title {
+  font-size: 1.4rem;
+  padding-bottom: 30px;
+}
+
+.card__age {
+  font-size: 0.8rem;
 }
