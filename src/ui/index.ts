@@ -1,4 +1,4 @@
-import createMainContainer from "./components/cards/createMainContainer.js";
+import createMainContainer from "./components/cards/main-container/createMainContainer.js";
 import createMainHeader from "./components/header/createMainHeader.js";
 
 const root = document.querySelector(".root");
