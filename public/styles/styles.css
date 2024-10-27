@@ -77,7 +77,7 @@ ul {
   object-position: top;
 }
 
-.card__info {
+.card__full-info {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -85,9 +85,31 @@ ul {
 
 .card__title {
   font-size: 1.4rem;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .card__age {
   font-size: 0.8rem;
+}
+
+.card__info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+}
+
+.card__state--alive {
+  width: 15px;
+  height: 15px;
+}
+
+.card__state--dead {
+  width: 15px;
+  height: 15px;
+}
+
+.card__image--dead {
+  rotate: 180deg;
 }
