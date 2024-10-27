@@ -2,9 +2,10 @@ const createMainHeader = (): HTMLElement => {
   const mainHeader = document.createElement("header");
   mainHeader.classList.add("main-header");
 
-  mainHeader.innerHTML = `
-  <h1> Game of Thrones </h1>
-  `;
+  const headerTitle = document.createElement("h1");
+  headerTitle.classList.add("main-header__title");
+  headerTitle.textContent = "Game of Thrones";
+  mainHeader.appendChild(headerTitle);
 
   return mainHeader;
 };
