@@ -19,6 +19,11 @@ const createCard = (character: Character): HTMLLIElement => {
   cardTitle.textContent = `${character.name} ${character.lastName ?? ""}`;
   cardInfo.appendChild(cardTitle);
 
+  const cardAge = document.createElement("span");
+  cardAge.classList.add("card__age");
+  cardAge.textContent = `Age: ${character.age} years`;
+  cardInfo.appendChild(cardAge);
+
   card.appendChild(cardInfo);
 
   return card;
