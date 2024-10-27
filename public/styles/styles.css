@@ -94,10 +94,11 @@ ul {
 
 .card__info {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   gap: 10px;
   font-size: 0.8rem;
+  position: relative;
+  padding-right: 20px;
 }
 
 .card__state--alive {
@@ -111,5 +112,11 @@ ul {
 }
 
 .card__image--dead {
-  rotate: 180deg;
+  transform: rotate(180deg);
+}
+
+.card__type {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
