@@ -6,12 +6,13 @@ describe("Given the createFighter function", () => {
     const name = "Aniol";
     const lastName = "Rodriguez";
     const age = 28;
+    const image = "images/daenerys.webp";
     const skillLevel = 10;
     const weapon = "Bitcoin";
 
     test("Then it should return an alive fighter", () => {
       const newFighter: Fighter = createFighter(
-        { name, lastName, age },
+        { name, lastName, age, image },
         skillLevel,
         weapon,
       );
@@ -23,7 +24,7 @@ describe("Given the createFighter function", () => {
       const expectedPhrase = "Primero pego y luego pregunto";
 
       const newFighter: Fighter = createFighter(
-        { name, lastName, age },
+        { name, lastName, age, image },
         skillLevel,
         weapon,
       );
@@ -35,7 +36,7 @@ describe("Given the createFighter function", () => {
 
     test("Then it should return a fighter who can die", () => {
       const newFighter: Fighter = createFighter(
-        { name, lastName, age },
+        { name, lastName, age, image },
         skillLevel,
         weapon,
       );

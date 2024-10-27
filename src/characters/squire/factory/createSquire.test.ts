@@ -7,12 +7,13 @@ describe("Given the createSquire function", () => {
     const name = "Aniol";
     const lastName = "Rodriguez";
     const age = 28;
+    const image = "images/bronn.webp";
     const pelotismLevel = 9;
     const servedCharacter = daenerys;
 
     test("Then it should return an alive Squire", () => {
       const newSquire: Squire = createSquire(
-        { name, lastName, age },
+        { name, lastName, age, image },
         pelotismLevel,
         servedCharacter,
       );
@@ -24,7 +25,7 @@ describe("Given the createSquire function", () => {
       const expectedPhrase = "Soy un loser";
 
       const newSquire: Squire = createSquire(
-        { name, lastName, age },
+        { name, lastName, age, image },
         pelotismLevel,
         servedCharacter,
       );
@@ -34,7 +35,7 @@ describe("Given the createSquire function", () => {
 
     test("Then it should return a Squire who can die", () => {
       const newSquire: Squire = createSquire(
-        { name, lastName, age },
+        { name, lastName, age, image },
         pelotismLevel,
         servedCharacter,
       );
@@ -47,7 +48,7 @@ describe("Given the createSquire function", () => {
 
     test("Then it should return a Squire who serves a Fighter", () => {
       const newSquire: Squire = createSquire(
-        { name, lastName, age },
+        { name, lastName, age, image },
         pelotismLevel,
         servedCharacter,
       );

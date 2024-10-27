@@ -6,11 +6,12 @@ describe("Given the createAdvisor function", () => {
   const name = "Aniol";
   const lastName = "Rodriguez";
   const age = 28;
+  const image = "images/tyrion.webp";
 
   describe("When called", () => {
     test("Then it should return an alive Advisor", () => {
       const newAdvisor: Advisor = createAdvisor(
-        { name, lastName, age },
+        { name, lastName, age, image },
         daenerys,
       );
 
@@ -21,7 +22,7 @@ describe("Given the createAdvisor function", () => {
       const expectedPhrase = "No sé por qué, pero creo que voy a morir pronto";
 
       const newAdvisor: Advisor = createAdvisor(
-        { name, lastName, age },
+        { name, lastName, age, image },
         daenerys,
       );
 
@@ -30,7 +31,7 @@ describe("Given the createAdvisor function", () => {
 
     test("Then it should return an Advisor who can die", () => {
       const newAdvisor: Advisor = createAdvisor(
-        { name, lastName, age },
+        { name, lastName, age, image },
         daenerys,
       );
 

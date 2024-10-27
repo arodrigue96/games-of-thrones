@@ -50,23 +50,34 @@ ul {
 }
 
 .cards-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px 60px;
+
+  @media (width >= 600px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .card {
   display: flex;
   flex-direction: column;
   background-color: #331c0f;
-  width: max-content;
   border-radius: 5px;
-  padding: 10px;
   box-shadow: 1px 1px 1px #000;
 }
 
 .card__title {
-  font-size: 1.2rem;
-  padding: 10px;
-  text-align: center;
+  font-size: 1.4rem;
+  padding: 20px;
+}
+
+.card__image {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 250px;
+  max-width: auto;
+  object-fit: cover;
+  object-position: top;
 }
