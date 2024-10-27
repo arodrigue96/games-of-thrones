@@ -20,13 +20,13 @@ const createCardState = (character: Character): HTMLDivElement => {
   }
 
   if (!character.isAlive) {
-    const thumbUp = document.createElement("img");
-    thumbUp.classList.add("card__state--dead");
-    thumbUp.src = "icons/thumb-down-fill.svg";
-    cardInfo.appendChild(thumbUp);
-    thumbUp.alt = "Character is dead";
-    thumbUp.width = 20;
-    thumbUp.height = 20;
+    const thumbDown = document.createElement("img");
+    thumbDown.classList.add("card__state--dead");
+    thumbDown.src = "icons/thumb-down-fill.svg";
+    cardInfo.appendChild(thumbDown);
+    thumbDown.alt = "Character is dead";
+    thumbDown.width = 20;
+    thumbDown.height = 20;
   }
 
   return cardInfo;
