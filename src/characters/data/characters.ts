@@ -13,18 +13,29 @@ export const joffrey: King = createKing(
     name: "Joffrey",
     lastName: "Baratheon",
     age: 13,
+    image: "images/joffrey.webp",
   },
   2,
 );
 
 export const jaime: Fighter = createFighter(
-  { name: "Jaime", lastName: "Lannister", age: 43 },
+  {
+    name: "Jaime",
+    lastName: "Lannister",
+    age: 43,
+    image: "images/jaime.webp",
+  },
   10,
   "Oathkeeper",
 );
 
 export const daenerys: Fighter = createFighter(
-  { name: "Daenerys", lastName: "Targaryen", age: 16 },
+  {
+    name: "Daenerys",
+    lastName: "Targaryen",
+    age: 16,
+    image: "images/daenerys.webp",
+  },
   9,
   "Drogon",
 );
@@ -34,16 +45,21 @@ export const tyrion: Advisor = createAdvisor(
     name: "Tyrion",
     lastName: "Lannister",
     age: 32,
+    image: "images/tyrion.webp",
   },
   daenerys,
 );
 
-export const broon: Squire = createSquire({ name: "Bronn", age: 40 }, 8, jaime);
+export const bronn: Squire = createSquire(
+  { name: "Bronn", age: 40, image: "images/bronn.webp" },
+  8,
+  jaime,
+);
 
 export const characters: Character[] = [
   joffrey,
   jaime,
   daenerys,
   tyrion,
-  broon,
+  bronn,
 ];
