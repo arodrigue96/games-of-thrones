@@ -1,29 +1,15 @@
 import { type Character } from "../../../../characters/character/types";
+import createCardImage from "./components/createCardImage.js";
+import createCardInfo from "./components/createCardInfo.js";
 
 const createCard = (character: Character): HTMLLIElement => {
   const card = document.createElement("li");
   card.classList.add("card");
 
-  const cardImage = document.createElement("img");
-  cardImage.classList.add("card__image");
-  cardImage.src = character.image;
-  cardImage.alt = `Imagen del personaje ${character.name} ${character.lastName ?? ""}`;
-  cardImage.width = 340;
+  const cardImage = createCardImage(character);
+  const cardInfo = createCardInfo(character);
+
   card.appendChild(cardImage);
-
-  const cardInfo = document.createElement("div");
-  cardInfo.classList.add("card__info");
-
-  const cardTitle = document.createElement("h2");
-  cardTitle.classList.add("card__title");
-  cardTitle.textContent = `${character.name} ${character.lastName ?? ""}`;
-  cardInfo.appendChild(cardTitle);
-
-  const cardAge = document.createElement("span");
-  cardAge.classList.add("card__age");
-  cardAge.textContent = `Age: ${character.age} years`;
-  cardInfo.appendChild(cardAge);
-
   card.appendChild(cardInfo);
 
   return card;
