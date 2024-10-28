@@ -8,7 +8,12 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #b9540b;
-  color: #ffffff;
+  color: #fff;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -18,25 +23,14 @@ h2 {
   font: inherit;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
 .root {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  gap: 10px;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .main-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
   height: 80px;
 }
 
@@ -47,12 +41,13 @@ ul {
 
 .main-container {
   margin: 0 auto;
+  padding: 20px 0;
 }
 
 .cards-list {
   display: flex;
   flex-direction: column;
-  gap: 25px 60px;
+  gap: 25px 30px;
 
   @media (width >= 600px) {
     display: grid;
@@ -61,26 +56,22 @@ ul {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
   background-color: #331c0f;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px #000;
+  box-shadow: 10px -3px 17px #000009;
+  overflow: hidden;
+  list-style-type: none;
 }
 
 .card__image {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  width: auto;
-  height: 250px;
+  width: 100%;
   object-fit: cover;
   object-position: top;
 }
 
 .card__full-info {
-  display: flex;
-  flex-direction: column;
   padding: 20px;
+  font-size: 0.8rem;
 }
 
 .card__title {
@@ -88,27 +79,12 @@ ul {
   padding-bottom: 20px;
 }
 
-.card__age {
-  font-size: 0.8rem;
-}
-
 .card__info {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.8rem;
   position: relative;
-  padding-right: 20px;
-}
-
-.card__state--alive {
-  width: 15px;
-  height: 15px;
-}
-
-.card__state--dead {
-  width: 15px;
-  height: 15px;
+  padding-top: 5px;
 }
 
 .card__image--dead {
@@ -119,4 +95,5 @@ ul {
   position: absolute;
   bottom: 0;
   right: 0;
+  font-size: 1.25rem;
 }

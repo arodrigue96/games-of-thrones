@@ -6,6 +6,7 @@ const createCardImage = (character: Character): HTMLImageElement => {
   cardImage.src = character.image;
   cardImage.alt = `Character image of ${character.name} ${character.lastName ?? ""}`;
   cardImage.width = 340;
+  cardImage.height = 250;
 
   if (!character.isAlive) {
     cardImage.classList.add("card__image--dead");
