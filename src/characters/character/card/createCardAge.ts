@@ -1,4 +1,4 @@
-import { type Character } from "../../../../../characters/character/types";
+import { type Character } from "../types";
 
 const createCardAge = (character: Character): HTMLElement => {
   const cardAge = document.createElement("span");

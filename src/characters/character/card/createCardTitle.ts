@@ -1,4 +1,4 @@
-import { type Character } from "../../../../../characters/character/types";
+import { type Character } from "../types";
 
 const createCardTitle = (character: Character): HTMLHeadingElement => {
   const cardTitle = document.createElement("h2");

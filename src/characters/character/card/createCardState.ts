@@ -1,4 +1,4 @@
-import { type Character } from "../../../../../characters/character/types";
+import { type Character } from "../types.js";
 import getCharacterEmoji from "./getCharacterEmoji.js";
 
 const createCardState = (character: Character): HTMLDivElement => {

@@ -1,4 +1,4 @@
-import { characters } from "../../../../characters/data/characters.js";
+import { characters } from "../../characters/data/characters.js";
 import createCardsList from "../cards-list/createCardsList.js";
 
 const createMainContainer = (): HTMLElement => {
