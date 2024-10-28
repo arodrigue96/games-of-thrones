@@ -1,4 +1,4 @@
-import { type Character } from "../../../../../characters/character/types";
+import { type Character } from "../types";
 
 const getCharacterEmoji = (character: Character): HTMLDivElement => {
   const emojiContainer = document.createElement("div");
