@@ -39,12 +39,6 @@ describe("Given the componenet cardsList", () => {
       screen.appendChild(charactersCards);
       const images = screen.querySelectorAll("img");
 
-      images.forEach((image, position) => {
-        console.log(`${position}: ${image.alt}`);
-      });
-
-      console.log(test);
-
       expect(images).not.toBeNull();
       expect(images[0]?.alt).toBe("Character image of Pepe Laemaez");
       expect(images[2].alt).toBe("Character image of Luis Luisez");
