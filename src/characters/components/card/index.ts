@@ -1,4 +1,14 @@
-import { type Character } from "../types";
+import createCardsList from "../../../components/cardsList/createCardsList.js";
+import { characters } from "../../data/characters.js";
+import { type Character } from "../../character/types.js";
+
+export const createCardContainer = (): HTMLElement => {
+  const cardContainer = document.createElement("main");
+  cardContainer.classList.add("card-container");
+  cardContainer.appendChild(createCardsList(characters));
+
+  return cardContainer;
+};
 
 export const createCardImage = (character: Character): HTMLImageElement => {
   const cardImage = document.createElement("img");

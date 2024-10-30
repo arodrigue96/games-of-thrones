@@ -1,7 +1,7 @@
-import createCardAge from "../../components/card/createCardAge.js";
-import createCardState from "../../components/card/createCardState.js";
-import createCardTitle from "../../components/card/createCardTitle.js";
-import { type Character } from "../types";
+import { type Character } from "../../character/types";
+import createCardAge from "./createCardAge.js";
+import createCardState from "./createCardState.js";
+import createCardTitle from "./createCardTitle.js";
 
 const createCardInfo = (character: Character): HTMLDivElement => {
   const cardInfo = document.createElement("div");

@@ -1,5 +1,5 @@
-import { type Character } from "../types";
-import getCharacterEmoji from "../../components/card/getCharacterEmoji.js";
+import { type Character } from "../../character/types";
+import getCharacterEmoji from "./getCharacterEmoji.js";
 
 const createCardState = (character: Character): HTMLDivElement => {
   const cardInfo = document.createElement("div");

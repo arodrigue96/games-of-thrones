@@ -1,6 +1,6 @@
 import createCardInfo from "../../characters/character/card/createCardInfo.js";
-import { createCardImage } from "../../characters/character/card/index.js";
 import { type Character } from "../../characters/character/types";
+import { createCardImage } from "../../characters/components/card/index.js";
 
 const createCharacterCard = (character: Character): HTMLLIElement => {
   const card = document.createElement("li");
