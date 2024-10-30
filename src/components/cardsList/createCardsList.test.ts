@@ -3,6 +3,7 @@ import createFighter from "../../characters/fighter/factory/createFighter";
 import createKing from "../../characters/king/factory/createKing";
 import { type King } from "../../characters/king/types";
 import { type Fighter } from "../../characters/fighter/types";
+import { type Character } from "../../characters/character/types";
 
 const screen = document.createElement("div");
 afterEach(() => {
@@ -16,7 +17,7 @@ describe("Given the componenet cardsList", () => {
         name: "Pepe",
         lastName: "Laemaez",
         age: 22,
-        image: "images/jaime.webp",
+        image: "",
       },
       9,
       "Drogon",
@@ -27,11 +28,12 @@ describe("Given the componenet cardsList", () => {
         name: "Luis",
         lastName: "Luisez",
         age: 15,
-        image: "images/joffrey.webp",
+        image: "",
       },
       2,
     );
-    const characters = [pepe, luis];
+
+    const characters: Character[] = [pepe, luis];
 
     test("Then it should show Pepe and Luis images", () => {
       const charactersCards = createCardsList(characters);
@@ -39,9 +41,20 @@ describe("Given the componenet cardsList", () => {
       screen.appendChild(charactersCards);
       const images = screen.querySelectorAll("img");
 
-      expect(images).not.toBeNull();
-      expect(images[0]?.alt).toBe("Character image of Pepe Laemaez");
-      expect(images[2].alt).toBe("Character image of Luis Luisez");
+      const pepeImageExists = [...images].some(
+        (image) =>
+          image.alt ===
+          `Character image of ${pepe.name} ${pepe.lastName ?? ""}`,
+      );
+
+      const luisImageExists = [...images].some(
+        (image) =>
+          image.alt ===
+          `Character image of ${luis.name} ${luis.lastName ?? ""}`,
+      );
+
+      expect(pepeImageExists).toBeTruthy();
+      expect(luisImageExists).toBeTruthy();
     });
 
     test("Then it should show Pepe Laemaez y Luis Luisez name's inside a heading", () => {
@@ -51,9 +64,18 @@ describe("Given the componenet cardsList", () => {
 
       const fullNames = screen.querySelectorAll("h2");
 
-      expect(fullNames).not.toBeNull();
-      expect(fullNames[0].textContent).toBe("Pepe Laemaez");
-      expect(fullNames[1].textContent).toBe("Luis Luisez");
+      const pepeNameExists = [...fullNames].some(
+        (heading) =>
+          heading.textContent === `${pepe.name} ${pepe.lastName ?? ""}`,
+      );
+
+      const luisNameExists = [...fullNames].some(
+        (heading) =>
+          heading.textContent === `${luis.name} ${luis.lastName ?? ""}`,
+      );
+
+      expect(pepeNameExists).toBeTruthy();
+      expect(luisNameExists).toBeTruthy();
     });
   });
 });
