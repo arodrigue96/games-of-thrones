@@ -72,17 +72,14 @@ export const createCardState = (character: Character): HTMLDivElement => {
   </span>
   `;
 
-  cardInfo.appendChild(getCharacterEmoji(character));
+  cardInfo.appendChild(createCharacterEmoji(character));
 
   return cardInfo;
 };
 
-export const getCharacterEmoji = (character: Character): HTMLDivElement => {
-  const emojiContainer = document.createElement("div");
-  emojiContainer.classList.add("card__type");
-
-  const addEmoji = document.createElement("span");
-  addEmoji.classList.add("card__type");
+export const createCharacterEmoji = (character: Character): HTMLElement => {
+  const characterEmoji = document.createElement("span");
+  characterEmoji.classList.add("card__type");
 
   const king = "Vais a morir todos";
   const fighter = "Primero pego y luego pregunto";
@@ -90,22 +87,20 @@ export const getCharacterEmoji = (character: Character): HTMLDivElement => {
   const squire = "Soy un loser";
 
   if (character.speak() === king) {
-    addEmoji.textContent = "👑";
+    characterEmoji.textContent = "👑";
   }
 
   if (character.speak() === fighter) {
-    addEmoji.textContent = "🗡";
+    characterEmoji.textContent = "🗡";
   }
 
   if (character.speak() === advisor) {
-    addEmoji.textContent = "🎓";
+    characterEmoji.textContent = "🎓";
   }
 
   if (character.speak() === squire) {
-    addEmoji.textContent = "🛡️";
+    characterEmoji.textContent = "🛡️";
   }
 
-  emojiContainer.appendChild(addEmoji);
-
-  return emojiContainer;
+  return characterEmoji;
 };
