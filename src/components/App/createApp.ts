@@ -1,4 +1,4 @@
-import createMainContainer from "../main-container/createMainContainer.js";
+import createMainContainer from "../../characters/character/card/createMainContainer.js";
 import createMainHeader from "../header/createMainHeader.js";
 
 const createApp = (): HTMLElement => {

@@ -1,4 +1,4 @@
-import createCardInfo from "../../characters/card/createCardInfo.js";
+import createCardInfo from "../../characters/character/card/createCardInfo.js";
 import createCardImage from "../../characters/character/card/createCardImage.js";
 import { type Character } from "../../characters/character/types";
 
