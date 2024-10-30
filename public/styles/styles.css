@@ -23,8 +23,8 @@ h2 {
   font: inherit;
 }
 
-.root {
-  padding: 0 40px;
+.main-container {
+  margin: 0 auto;
 }
 
 .main-header {
@@ -39,9 +39,8 @@ h2 {
   font-weight: 600;
 }
 
-.main-container {
-  margin: 0 auto;
-  padding: 20px 0;
+.card-container {
+  padding: 30px 40px;
 }
 
 .cards-list {
