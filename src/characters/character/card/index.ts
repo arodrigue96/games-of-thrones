@@ -1,6 +1,6 @@
 import { type Character } from "../types";
 
-const createCardImage = (character: Character): HTMLImageElement => {
+export const createCardImage = (character: Character): HTMLImageElement => {
   const cardImage = document.createElement("img");
   cardImage.classList.add("card__image");
   cardImage.src = character.image;
@@ -14,5 +14,3 @@ const createCardImage = (character: Character): HTMLImageElement => {
 
   return cardImage;
 };
-
-export default createCardImage;
