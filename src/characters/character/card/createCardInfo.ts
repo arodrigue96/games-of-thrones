@@ -1,4 +1,4 @@
-import { type Character } from "../types.js";
+import { type Character } from "../types";
 import createCardAge from "./createCardAge.js";
 import createCardState from "./createCardState.js";
 import createCardTitle from "./createCardTitle.js";

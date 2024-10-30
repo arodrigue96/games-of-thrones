@@ -1,5 +1,5 @@
-import { characters } from "../../characters/data/characters.js";
-import createCardsList from "../cards-list/createCardsList.js";
+import { characters } from "../../data/characters.js";
+import createCardsList from "../../../components/cardsList/createCardsList.js";
 
 const createMainContainer = (): HTMLElement => {
   const mainContainer = document.createElement("main");

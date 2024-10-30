@@ -1,4 +1,4 @@
-import createApp from "./components/App/createApp.js";
+import createApp from "./components/app/createApp.js";
 
 const root = document.querySelector(".root");
 
