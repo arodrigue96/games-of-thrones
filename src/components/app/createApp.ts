@@ -1,12 +1,13 @@
 import createMainHeader from "../header/createMainHeader.js";
-import { createCardContainer } from "../../characters/components/card/index.js";
+import { createCardContainer } from "../../characters/components/characterCard/createCharacterCard.js";
+import { type Character } from "../../characters/character/types.js";
 
-const createApp = (): HTMLElement => {
+const createApp = (characters: Character[]): HTMLElement => {
   const appContainer = document.createElement("div");
   appContainer.classList.add("main-container");
 
   const mainHeader = createMainHeader();
-  const cardContainer = createCardContainer();
+  const cardContainer = createCardContainer(characters);
 
   appContainer.appendChild(mainHeader);
   appContainer.appendChild(cardContainer);

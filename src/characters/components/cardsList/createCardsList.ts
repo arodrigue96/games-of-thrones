@@ -1,4 +1,4 @@
-import { type Character } from "../../characters/character/types.js";
+import { type Character } from "../../character/types.js";
 import createCharacterCard from "../characterCard/createCharacterCard.js";
 
 const createCardsList = (characters: Character[]): HTMLElement => {

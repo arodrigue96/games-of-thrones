@@ -1,5 +1,5 @@
-import { jaime } from "../../characters/data/characters";
-import createCharacterCard from "./createCharacterCard";
+import { jaime } from "../../data/characters";
+import createCharacterCard from "./createCharacterCard.js";
 
 const screen = document.createElement("div");
 afterEach(() => {

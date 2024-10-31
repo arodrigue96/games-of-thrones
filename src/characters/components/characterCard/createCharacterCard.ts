@@ -1,8 +1,7 @@
-import createCardsList from "../../../components/cardsList/createCardsList.js";
-import { characters } from "../../data/characters.js";
-import { type Character } from "../../character/types.js";
+import { type Character } from "../../character/types";
+import createCardsList from "../cardsList/createCardsList.js";
 
-export const createCardContainer = (): HTMLElement => {
+export const createCardContainer = (characters: Character[]): HTMLElement => {
   const cardContainer = document.createElement("main");
   cardContainer.classList.add("card-container");
   cardContainer.appendChild(createCardsList(characters));
@@ -10,7 +9,7 @@ export const createCardContainer = (): HTMLElement => {
   return cardContainer;
 };
 
-export const createCardImage = (character: Character): HTMLImageElement => {
+const createCardImage = (character: Character): HTMLImageElement => {
   const cardImage = document.createElement("img");
   cardImage.classList.add("card__image");
   cardImage.src = character.image;
@@ -25,7 +24,7 @@ export const createCardImage = (character: Character): HTMLImageElement => {
   return cardImage;
 };
 
-export const createCardTitle = (character: Character): HTMLHeadingElement => {
+const createCardTitle = (character: Character): HTMLHeadingElement => {
   const cardTitle = document.createElement("h2");
   cardTitle.classList.add("card__title");
   cardTitle.textContent = `${character.name} ${character.lastName ?? ""}`;
@@ -33,7 +32,7 @@ export const createCardTitle = (character: Character): HTMLHeadingElement => {
   return cardTitle;
 };
 
-export const createCardInfo = (character: Character): HTMLDivElement => {
+const createCardInfo = (character: Character): HTMLDivElement => {
   const cardInfo = document.createElement("div");
   cardInfo.classList.add("card__full-info");
 
@@ -48,7 +47,7 @@ export const createCardInfo = (character: Character): HTMLDivElement => {
   return cardInfo;
 };
 
-export const createCardAge = (character: Character): HTMLElement => {
+const createCardAge = (character: Character): HTMLElement => {
   const cardAge = document.createElement("span");
   cardAge.classList.add("card__age");
   cardAge.textContent = `Age: ${character.age} years`;
@@ -56,7 +55,7 @@ export const createCardAge = (character: Character): HTMLElement => {
   return cardAge;
 };
 
-export const createCardState = (character: Character): HTMLDivElement => {
+const createCardState = (character: Character): HTMLDivElement => {
   const cardInfo = document.createElement("div");
   cardInfo.classList.add("card__info");
 
@@ -77,7 +76,7 @@ export const createCardState = (character: Character): HTMLDivElement => {
   return cardInfo;
 };
 
-export const createCharacterEmoji = (character: Character): HTMLElement => {
+const createCharacterEmoji = (character: Character): HTMLElement => {
   const characterEmoji = document.createElement("span");
   characterEmoji.classList.add("card__type");
 
@@ -104,3 +103,18 @@ export const createCharacterEmoji = (character: Character): HTMLElement => {
 
   return characterEmoji;
 };
+
+const createCharacterCard = (character: Character): HTMLLIElement => {
+  const card = document.createElement("li");
+  card.classList.add("card");
+
+  const cardImage = createCardImage(character);
+  const cardInfo = createCardInfo(character);
+
+  card.appendChild(cardImage);
+  card.appendChild(cardInfo);
+
+  return card;
+};
+
+export default createCharacterCard;

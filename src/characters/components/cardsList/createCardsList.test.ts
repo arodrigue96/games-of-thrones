@@ -1,9 +1,9 @@
-import createCardsList from "./createCardsList";
-import createFighter from "../../characters/fighter/factory/createFighter";
-import createKing from "../../characters/king/factory/createKing";
-import { type King } from "../../characters/king/types";
-import { type Fighter } from "../../characters/fighter/types";
-import { type Character } from "../../characters/character/types";
+import { type Character } from "../../character/types";
+import createFighter from "../../fighter/factory/createFighter.js";
+import { type Fighter } from "../../fighter/types";
+import createKing from "../../king/factory/createKing.js";
+import { type King } from "../../king/types";
+import createCardsList from "./createCardsList.js";
 
 const screen = document.createElement("div");
 afterEach(() => {
@@ -39,22 +39,22 @@ describe("Given the componenet cardsList", () => {
       const charactersCards = createCardsList(characters);
 
       screen.appendChild(charactersCards);
-      const images = screen.querySelectorAll("img");
+      const images = [...screen.querySelectorAll("img")];
 
-      const pepeImageExists = [...images].some(
+      const doesPepeImageExists = images.some(
         (image) =>
           image.alt ===
           `Character image of ${pepe.name} ${pepe.lastName ?? ""}`,
       );
 
-      const luisImageExists = [...images].some(
+      const doesLuisImageExists = images.some(
         (image) =>
           image.alt ===
           `Character image of ${luis.name} ${luis.lastName ?? ""}`,
       );
 
-      expect(pepeImageExists).toBeTruthy();
-      expect(luisImageExists).toBeTruthy();
+      expect(doesPepeImageExists).toBeTruthy();
+      expect(doesLuisImageExists).toBeTruthy();
     });
 
     test("Then it should show Pepe Laemaez y Luis Luisez name's inside a heading", () => {
