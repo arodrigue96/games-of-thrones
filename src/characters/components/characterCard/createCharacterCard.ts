@@ -9,13 +9,20 @@ export const createCardContainer = (characters: Character[]): HTMLElement => {
   return cardContainer;
 };
 
-const createCardImage = (character: Character): HTMLImageElement => {
+const createCardImage = (
+  character: Character,
+  isLazyLoaded?: boolean,
+): HTMLImageElement => {
   const cardImage = document.createElement("img");
   cardImage.classList.add("card__image");
   cardImage.src = character.image;
   cardImage.alt = `Character image of ${character.name} ${character.lastName ?? ""}`;
   cardImage.width = 340;
   cardImage.height = 250;
+
+  if (isLazyLoaded) {
+    cardImage.loading = "lazy";
+  }
 
   if (!character.isAlive) {
     cardImage.classList.add("card__image--dead");
@@ -104,11 +111,14 @@ const createCharacterEmoji = (character: Character): HTMLElement => {
   return characterEmoji;
 };
 
-const createCharacterCard = (character: Character): HTMLLIElement => {
+const createCharacterCard = (
+  character: Character,
+  isLazyLoaded?: boolean,
+): HTMLLIElement => {
   const card = document.createElement("li");
   card.classList.add("card");
 
-  const cardImage = createCardImage(character);
+  const cardImage = createCardImage(character, isLazyLoaded);
   const cardInfo = createCardInfo(character);
 
   card.appendChild(cardImage);
