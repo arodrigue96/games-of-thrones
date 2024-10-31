@@ -1,8 +1,9 @@
-import { createCardContainer } from "../../characters/components/card/index.js";
 import createMainHeader from "../header/createMainHeader.js";
+import { createCardContainer } from "../../characters/components/card/index.js";
 
 const createApp = (): HTMLElement => {
   const appContainer = document.createElement("div");
+  appContainer.classList.add("main-container");
 
   const mainHeader = createMainHeader();
   const cardContainer = createCardContainer();
