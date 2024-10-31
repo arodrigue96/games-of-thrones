@@ -5,9 +5,9 @@ const createCardsList = (characters: Character[]): HTMLElement => {
   const cardsList = document.createElement("ul");
   cardsList.classList.add("cards-list");
 
-  characters.forEach((character) => {
-    const card = createCharacterCard(character);
-
+  characters.forEach((character, position) => {
+    const isLazyLoaded = position >= 3;
+    const card = createCharacterCard(character, isLazyLoaded);
     cardsList.appendChild(card);
   });
 
