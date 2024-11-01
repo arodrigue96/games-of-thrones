@@ -65,7 +65,7 @@ const createCardState = (character: Character): HTMLDivElement => {
     State:
     <img
       src="icons/${character.isAlive ? "thumb-up-fill.svg" : "thumb-down-fill.svg"}"
-      alt="Character is ${character.isAlive ? "Character is alive" : "Character is dead"}"
+      alt="${character.isAlive ? "Character is alive" : "Character is dead"}"
       width="20"
       height="20"
     >
