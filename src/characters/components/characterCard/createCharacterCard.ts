@@ -117,13 +117,17 @@ const createCharacterCard = (
   isLazyLoaded?: boolean,
 ): HTMLLIElement => {
   const card = document.createElement("li");
-  card.classList.add("card");
+
+  const characterCard = document.createElement("article");
+  characterCard.classList.add("card");
 
   const cardImage = createCardImage(character, isLazyLoaded);
   const cardInfo = createCardInfo(character);
 
-  card.appendChild(cardImage);
-  card.appendChild(cardInfo);
+  characterCard.appendChild(cardImage);
+  characterCard.appendChild(cardInfo);
+
+  card.appendChild(characterCard);
 
   return card;
 };

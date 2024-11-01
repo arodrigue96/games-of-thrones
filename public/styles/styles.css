@@ -16,6 +16,10 @@ ul {
   padding: 0;
 }
 
+.cards-list li {
+  list-style-type: none;
+}
+
 h1,
 h2 {
   margin: 0;
@@ -60,6 +64,7 @@ h2 {
   box-shadow: 10px -3px 17px #000009;
   overflow: hidden;
   list-style-type: none;
+  height: 100%;
 }
 
 .card__image {
