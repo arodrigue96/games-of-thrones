@@ -1,4 +1,4 @@
-import { jaime } from "../../data/characters";
+import { jaime } from "../../fighter/data.js";
 import createCharacterCard from "./createCharacterCard.js";
 
 const screen = document.createElement("div");
