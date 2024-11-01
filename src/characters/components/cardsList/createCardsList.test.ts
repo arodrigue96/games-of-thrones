@@ -3,6 +3,7 @@ import createFighter from "../../fighter/factory/createFighter.js";
 import { type Fighter } from "../../fighter/types";
 import createKing from "../../king/factory/createKing.js";
 import { type King } from "../../king/types";
+import createFullName from "../characterCard/createFullName";
 import createCardsList from "./createCardsList.js";
 
 const screen = document.createElement("div");
@@ -44,13 +45,13 @@ describe("Given the componenet cardsList", () => {
       const doesPepeImageExists = images.some(
         (image) =>
           image.alt ===
-          `Character image of ${pepe.name} ${pepe.lastName ?? ""}`,
+          `Character image of ${createFullName(pepe.name, pepe.lastName)}`,
       );
 
       const doesLuisImageExists = images.some(
         (image) =>
           image.alt ===
-          `Character image of ${luis.name} ${luis.lastName ?? ""}`,
+          `Character image of ${createFullName(luis.name, luis.lastName)}`,
       );
 
       expect(doesPepeImageExists).toBeTruthy();
@@ -62,16 +63,16 @@ describe("Given the componenet cardsList", () => {
 
       screen.appendChild(charactersCards);
 
-      const fullNames = screen.querySelectorAll("h2");
+      const fullNames = [...screen.querySelectorAll("h2")];
 
-      const pepeNameExists = [...fullNames].some(
+      const pepeNameExists = fullNames.some(
         (heading) =>
-          heading.textContent === `${pepe.name} ${pepe.lastName ?? ""}`,
+          heading.textContent === `${createFullName(pepe.name, pepe.lastName)}`,
       );
 
-      const luisNameExists = [...fullNames].some(
+      const luisNameExists = fullNames.some(
         (heading) =>
-          heading.textContent === `${luis.name} ${luis.lastName ?? ""}`,
+          heading.textContent === `${createFullName(luis.name, luis.lastName)}`,
       );
 
       expect(pepeNameExists).toBeTruthy();

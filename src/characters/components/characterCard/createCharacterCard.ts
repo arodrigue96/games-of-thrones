@@ -1,5 +1,6 @@
 import { type Character } from "../../character/types";
 import createCardsList from "../cardsList/createCardsList.js";
+import createFullName from "./createFullName.js";
 
 export const createCardContainer = (characters: Character[]): HTMLElement => {
   const cardContainer = document.createElement("main");
@@ -16,7 +17,7 @@ const createCardImage = (
   const cardImage = document.createElement("img");
   cardImage.classList.add("card__image");
   cardImage.src = character.image;
-  cardImage.alt = `Character image of ${character.name} ${character.lastName ?? ""}`;
+  cardImage.alt = `Character image of ${createFullName(character.name, character.lastName)}`;
   cardImage.width = 340;
   cardImage.height = 250;
 
@@ -34,7 +35,7 @@ const createCardImage = (
 const createCardTitle = (character: Character): HTMLHeadingElement => {
   const cardTitle = document.createElement("h2");
   cardTitle.classList.add("card__title");
-  cardTitle.textContent = `${character.name} ${character.lastName ?? ""}`;
+  cardTitle.textContent = `${createFullName(character.name, character.lastName)}`;
 
   return cardTitle;
 };
