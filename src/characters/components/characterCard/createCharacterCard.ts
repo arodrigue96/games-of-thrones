@@ -32,23 +32,16 @@ const createCardImage = (
   return cardImage;
 };
 
-const createCardTitle = (character: Character): HTMLHeadingElement => {
-  const cardTitle = document.createElement("h2");
-  cardTitle.classList.add("card__title");
-  cardTitle.textContent = `${createFullName(character.name, character.lastName)}`;
-
-  return cardTitle;
-};
-
 const createCardInfo = (character: Character): HTMLDivElement => {
   const cardInfo = document.createElement("div");
   cardInfo.classList.add("card__full-info");
 
-  const cardTitle = createCardTitle(character);
+  cardInfo.innerHTML = `
+  <h2 class="card__title">${createFullName(character.name, character.lastName)}</h2>`;
+
   const cardAge = createCardAge(character);
   const cardState = createCardState(character);
 
-  cardInfo.appendChild(cardTitle);
   cardInfo.appendChild(cardAge);
   cardInfo.appendChild(cardState);
 
