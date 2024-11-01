@@ -1,6 +1,6 @@
 import createAdvisor from "./createAdvisor";
 import { type Advisor } from "../types";
-import { daenerys } from "../../data/characters";
+import { daenerys } from "../../fighter/data";
 
 describe("Given the createAdvisor function", () => {
   const name = "Aniol";

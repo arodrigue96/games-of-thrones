@@ -27,6 +27,11 @@ h2 {
   font: inherit;
 }
 
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
 .main-container {
   margin: 0 auto;
 }
@@ -39,7 +44,7 @@ h2 {
 }
 
 .main-header__title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -50,9 +55,15 @@ h2 {
 .cards-list {
   display: flex;
   flex-direction: column;
-  gap: 25px 30px;
+  gap: 25px 0px;
 
-  @media (width >= 600px) {
+  @media (width >= 648px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 30px;
+  }
+
+  @media (width >= 950px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -63,31 +74,29 @@ h2 {
   border-radius: 5px;
   box-shadow: 10px -3px 17px #000009;
   overflow: hidden;
-  list-style-type: none;
-  height: 100%;
+  font-size: 1rem;
 }
 
 .card__image {
-  width: 100%;
+  max-width: 100%;
   object-fit: cover;
   object-position: top;
 }
 
 .card__full-info {
   padding: 20px;
-  font-size: 0.8rem;
 }
 
 .card__title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
   padding-bottom: 20px;
 }
 
 .card__info {
   display: flex;
   align-items: center;
-  gap: 10px;
-  position: relative;
+  justify-content: space-between;
   padding-top: 5px;
 }
 
@@ -96,8 +105,5 @@ h2 {
 }
 
 .card__type {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   font-size: 1.25rem;
 }

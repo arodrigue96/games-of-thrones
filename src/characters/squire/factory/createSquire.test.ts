@@ -1,4 +1,4 @@
-import { daenerys } from "../../data/characters";
+import { daenerys } from "../../fighter/data";
 import { type Squire } from "../types";
 import { createSquire } from "./createSquire";
 
