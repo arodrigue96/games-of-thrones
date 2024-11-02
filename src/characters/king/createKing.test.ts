@@ -1,16 +1,15 @@
-import createKing from "./createKing";
-import { type King } from "../types";
+import King from "./King/King";
 
 describe("Given the createKing function", () => {
   describe("When called", () => {
     const name = "Aniol";
     const lastName = "Rodriguez";
     const age = 28;
-    const image = "images/joffrey.webp";
+    const image = "";
     const yearsOfReign = 5;
 
     test("Then it should return an alive King", () => {
-      const newKing: King = createKing(
+      const newKing: King = new King(
         { name, lastName, age, image },
         yearsOfReign,
       );
@@ -21,16 +20,16 @@ describe("Given the createKing function", () => {
     test("Then it should return a King who says 'Vais a morir todos'", () => {
       const expectedPhrase = "Vais a morir todos";
 
-      const newKing: King = createKing(
+      const newKing: King = new King(
         { name, lastName, age, image },
         yearsOfReign,
       );
 
-      expect(newKing.phrase).toBe(expectedPhrase);
+      expect(newKing.speak()).toBe(expectedPhrase);
     });
 
     test("Then it should return a King who can die", () => {
-      const newKing: King = createKing(
+      const newKing: King = new King(
         { name, lastName, age, image },
         yearsOfReign,
       );
