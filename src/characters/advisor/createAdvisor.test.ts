@@ -1,7 +1,7 @@
 import Advisor from "./Advisor/Advisor";
 import { daenerys } from "../fighter/data";
 
-describe("Given the createAdvisor function", () => {
+describe("Given the Advisor class", () => {
   const name = "Aniol";
   const lastName = "Rodriguez";
   const age = 28;

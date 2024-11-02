@@ -1,7 +1,7 @@
 import { daenerys } from "../fighter/data";
 import Squire from "./Squire/Squire";
 
-describe("Given the createSquire function", () => {
+describe("Given the Squire class", () => {
   describe("When called", () => {
     const name = "Aniol";
     const lastName = "Rodriguez";

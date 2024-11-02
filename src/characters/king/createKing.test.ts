@@ -1,6 +1,6 @@
 import King from "./King/King";
 
-describe("Given the createKing function", () => {
+describe("Given the King class", () => {
   describe("When called", () => {
     const name = "Aniol";
     const lastName = "Rodriguez";
