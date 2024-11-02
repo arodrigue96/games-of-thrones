@@ -16,7 +16,7 @@ ul {
   padding: 0;
 }
 
-.cards-list li {
+.characters-cards-list li {
   list-style-type: none;
 }
 
@@ -52,7 +52,7 @@ h2 {
   padding: 30px 40px;
 }
 
-.cards-list {
+.characters-cards-list {
   display: flex;
   flex-direction: column;
   gap: 25px 0px;

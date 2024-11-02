@@ -1,9 +1,9 @@
-import { type Character } from "../../character/types.js";
+import { type Character } from "../../character/Character/Character.js";
 import createCharacterCard from "../characterCard/createCharacterCard.js";
 
-const createCardsList = (characters: Character[]): HTMLElement => {
+const createCharactersCardsList = (characters: Character[]): HTMLElement => {
   const cardsList = document.createElement("ul");
-  cardsList.classList.add("cards-list");
+  cardsList.classList.add("characters-cards-list");
 
   characters.forEach((character, position) => {
     const isLazyLoaded = position >= 3;
@@ -14,4 +14,4 @@ const createCardsList = (characters: Character[]): HTMLElement => {
   return cardsList;
 };
 
-export default createCardsList;
+export default createCharactersCardsList;
