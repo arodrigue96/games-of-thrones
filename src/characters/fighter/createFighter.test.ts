@@ -1,6 +1,6 @@
 import Fighter from "./Fighter/Fighter";
 
-describe("Given the createFighter function", () => {
+describe("Given the Fighter class", () => {
   describe("When it's called", () => {
     const name = "Aniol";
     const lastName = "Rodriguez";
