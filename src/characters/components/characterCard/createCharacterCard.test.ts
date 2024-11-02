@@ -1,4 +1,4 @@
-import { jaime } from "../../fighter/data.js";
+import Fighter from "../../fighter/Fighter/Fighter.js";
 import createCharacterCard from "./createCharacterCard.js";
 
 const screen = document.createElement("div");
@@ -8,6 +8,19 @@ afterEach(() => {
 
 describe("Given the component characterCard", () => {
   describe("When it receives Jaime character", () => {
+    const name = "Jaime";
+    const lastName = "Lannister";
+    const age = 43;
+    const image = "";
+    const weapon = "Oathkeeper";
+    const skillLevel = 10;
+
+    const jaime: Fighter = new Fighter(
+      { name, lastName, age, image },
+      weapon,
+      skillLevel,
+    );
+
     test("Then it should show Jaime's image", () => {
       const expectedAltImage = /Character image of Jaime Lannister/i;
 

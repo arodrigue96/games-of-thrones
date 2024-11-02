@@ -1,8 +1,7 @@
+import Advisor from "./Advisor/Advisor.js";
 import { daenerys } from "../fighter/data.js";
-import createAdvisor from "./factory/createAdvisor.js";
-import { type Advisor } from "./types";
 
-export const tyrion: Advisor = createAdvisor(
+export const tyrion: Advisor = new Advisor(
   {
     name: "Tyrion",
     lastName: "Lannister",

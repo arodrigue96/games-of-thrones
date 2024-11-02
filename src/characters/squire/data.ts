@@ -1,9 +1,8 @@
 import { jaime } from "../fighter/data.js";
-import { createSquire } from "./factory/createSquire.js";
-import { type Squire } from "./types";
+import Squire from "./Squire/Squire.js";
 
-export const bronn: Squire = createSquire(
+export const bronn: Squire = new Squire(
   { name: "Bronn", age: 40, image: "images/bronn.webp" },
-  8,
   jaime,
+  8,
 );

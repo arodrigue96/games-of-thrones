@@ -1,24 +1,23 @@
-import createFighter from "./factory/createFighter.js";
-import { type Fighter } from "./types";
+import Fighter from "./Fighter/Fighter.js";
 
-export const jaime: Fighter = createFighter(
+export const jaime: Fighter = new Fighter(
   {
     name: "Jaime",
     lastName: "Lannister",
     age: 43,
     image: "images/jaime.webp",
   },
-  10,
   "Oathkeeper",
+  10,
 );
 
-export const daenerys: Fighter = createFighter(
+export const daenerys: Fighter = new Fighter(
   {
     name: "Daenerys",
     lastName: "Targaryen",
     age: 16,
     image: "images/daenerys.webp",
   },
-  9,
   "Drogon",
+  9,
 );

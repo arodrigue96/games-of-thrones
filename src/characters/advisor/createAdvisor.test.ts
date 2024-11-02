@@ -1,16 +1,15 @@
-import createAdvisor from "./createAdvisor";
-import { type Advisor } from "../types";
-import { daenerys } from "../../fighter/data";
+import Advisor from "./Advisor/Advisor";
+import { daenerys } from "../fighter/data";
 
 describe("Given the createAdvisor function", () => {
   const name = "Aniol";
   const lastName = "Rodriguez";
   const age = 28;
-  const image = "images/tyrion.webp";
+  const image = "";
 
   describe("When called", () => {
     test("Then it should return an alive Advisor", () => {
-      const newAdvisor: Advisor = createAdvisor(
+      const newAdvisor: Advisor = new Advisor(
         { name, lastName, age, image },
         daenerys,
       );
@@ -21,16 +20,16 @@ describe("Given the createAdvisor function", () => {
     test("Then it should return an Advisor who says 'No sé por qué, pero creo que voy a morir pronto'", () => {
       const expectedPhrase = "No sé por qué, pero creo que voy a morir pronto";
 
-      const newAdvisor: Advisor = createAdvisor(
+      const newAdvisor: Advisor = new Advisor(
         { name, lastName, age, image },
         daenerys,
       );
 
-      expect(newAdvisor.phrase).toBe(expectedPhrase);
+      expect(newAdvisor.speak()).toBe(expectedPhrase);
     });
 
     test("Then it should return an Advisor who can die", () => {
-      const newAdvisor: Advisor = createAdvisor(
+      const newAdvisor: Advisor = new Advisor(
         { name, lastName, age, image },
         daenerys,
       );

@@ -1,30 +1,29 @@
-import { type Character } from "../../character/types";
-import createFighter from "../../fighter/factory/createFighter.js";
-import { type Fighter } from "../../fighter/types";
-import createKing from "../../king/factory/createKing.js";
-import { type King } from "../../king/types";
+import { type Character } from "../../character/Character/Character";
+import Fighter from "../../fighter/Fighter/Fighter";
+import King from "../../king/King/King.js";
 import createFullName from "../characterCard/createFullName";
-import createCardsList from "./createCardsList.js";
+import createCharactersCardsList from "./createCharactersCardsList.js";
 
 const screen = document.createElement("div");
+
 afterEach(() => {
   screen.innerHTML = "";
 });
 
-describe("Given the componenet cardsList", () => {
+describe("Given the componenet characterCardsList", () => {
   describe("When it receives the characters Pepe and Luis", () => {
-    const pepe: Fighter = createFighter(
+    const pepe: Fighter = new Fighter(
       {
         name: "Pepe",
         lastName: "Laemaez",
         age: 22,
         image: "",
       },
-      9,
       "Drogon",
+      9,
     );
 
-    const luis: King = createKing(
+    const luis: King = new King(
       {
         name: "Luis",
         lastName: "Luisez",
@@ -37,7 +36,7 @@ describe("Given the componenet cardsList", () => {
     const characters: Character[] = [pepe, luis];
 
     test("Then it should show Pepe and Luis images", () => {
-      const charactersCards = createCardsList(characters);
+      const charactersCards = createCharactersCardsList(characters);
 
       screen.appendChild(charactersCards);
       const images = [...screen.querySelectorAll("img")];
@@ -45,13 +44,13 @@ describe("Given the componenet cardsList", () => {
       const doesPepeImageExists = images.some(
         (image) =>
           image.alt ===
-          `Character image of ${createFullName(pepe.name, pepe.lastName)}`,
+          `Character image of ${createFullName(pepe.characterData.name, pepe.characterData.lastName)}`,
       );
 
       const doesLuisImageExists = images.some(
         (image) =>
           image.alt ===
-          `Character image of ${createFullName(luis.name, luis.lastName)}`,
+          `Character image of ${createFullName(luis.characterData.name, luis.characterData.lastName)}`,
       );
 
       expect(doesPepeImageExists).toBeTruthy();
@@ -59,24 +58,26 @@ describe("Given the componenet cardsList", () => {
     });
 
     test("Then it should show Pepe Laemaez y Luis Luisez name's inside a heading", () => {
-      const charactersCards = createCardsList(characters);
+      const charactersCards = createCharactersCardsList(characters);
 
       screen.appendChild(charactersCards);
 
       const fullNames = [...screen.querySelectorAll("h2")];
 
-      const pepeNameExists = fullNames.some(
+      const doesPepeNameExist = fullNames.some(
         (heading) =>
-          heading.textContent === `${createFullName(pepe.name, pepe.lastName)}`,
+          heading.textContent ===
+          `${createFullName(pepe.characterData.name, pepe.characterData.lastName)}`,
       );
 
-      const luisNameExists = fullNames.some(
+      const doesLuisNameExist = fullNames.some(
         (heading) =>
-          heading.textContent === `${createFullName(luis.name, luis.lastName)}`,
+          heading.textContent ===
+          `${createFullName(luis.characterData.name, luis.characterData.lastName)}`,
       );
 
-      expect(pepeNameExists).toBeTruthy();
-      expect(luisNameExists).toBeTruthy();
+      expect(doesPepeNameExist).toBeTruthy();
+      expect(doesLuisNameExist).toBeTruthy();
     });
   });
 });

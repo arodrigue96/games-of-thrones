@@ -1,11 +1,11 @@
-import { type Character } from "../../character/types";
-import createCardsList from "../cardsList/createCardsList.js";
+import { type Character } from "../../character/Character/Character";
+import createCharactersCardsList from "../charactersCardsList/createCharactersCardsList.js";
 import createFullName from "./createFullName.js";
 
 export const createCardContainer = (characters: Character[]): HTMLElement => {
   const cardContainer = document.createElement("main");
   cardContainer.classList.add("card-container");
-  cardContainer.appendChild(createCardsList(characters));
+  cardContainer.appendChild(createCharactersCardsList(characters));
 
   return cardContainer;
 };
@@ -14,10 +14,13 @@ const createCardImage = (
   character: Character,
   isLazyLoaded?: boolean,
 ): HTMLImageElement => {
+  const { name, lastName, image } = character.characterData;
+  const { isAlive } = character;
+
   const cardImage = document.createElement("img");
   cardImage.classList.add("card__image");
-  cardImage.src = character.image;
-  cardImage.alt = `Character image of ${createFullName(character.name, character.lastName)}`;
+  cardImage.src = image;
+  cardImage.alt = `Character image of ${createFullName(name, lastName)}`;
   cardImage.width = 340;
   cardImage.height = 250;
 
@@ -25,7 +28,7 @@ const createCardImage = (
     cardImage.loading = "lazy";
   }
 
-  if (!character.isAlive) {
+  if (!isAlive) {
     cardImage.classList.add("card__image--dead");
   }
 
@@ -33,11 +36,13 @@ const createCardImage = (
 };
 
 const createCardInfo = (character: Character): HTMLDivElement => {
+  const { name, lastName } = character.characterData;
+
   const cardInfo = document.createElement("div");
   cardInfo.classList.add("card__full-info");
 
   cardInfo.innerHTML = `
-  <h2 class="card__title">${createFullName(character.name, character.lastName)}</h2>`;
+  <h2 class="card__title">${createFullName(name, lastName)}</h2>`;
 
   const cardAge = createCardAge(character);
   const cardState = createCardState(character);
@@ -49,14 +54,20 @@ const createCardInfo = (character: Character): HTMLDivElement => {
 };
 
 const createCardAge = (character: Character): HTMLElement => {
+  const { age } = character.characterData;
+
   const cardAge = document.createElement("span");
   cardAge.classList.add("card__age");
-  cardAge.textContent = `Age: ${character.age} years`;
+  cardAge.textContent = `Age: ${age} years`;
 
   return cardAge;
 };
 
 const createCardState = (character: Character): HTMLDivElement => {
+  const { isAlive } = character;
+  const characterState = `icons/${isAlive ? "thumb-up-fill.svg" : "thumb-down-fill.svg"}`;
+  const characterAlt = `${isAlive ? "Character is alive" : "Character is dead"}`;
+
   const cardInfo = document.createElement("div");
   cardInfo.classList.add("card__info");
 
@@ -64,8 +75,8 @@ const createCardState = (character: Character): HTMLDivElement => {
   <span class= "card__state">
     State:
     <img
-      src="icons/${character.isAlive ? "thumb-up-fill.svg" : "thumb-down-fill.svg"}"
-      alt="${character.isAlive ? "Character is alive" : "Character is dead"}"
+      src="${characterState}"
+      alt="${characterAlt}"
       width="20"
       height="20"
     >

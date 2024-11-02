@@ -1,5 +1,4 @@
-import { type Fighter } from "../types";
-import createFighter from "./createFighter";
+import Fighter from "./Fighter/Fighter";
 
 describe("Given the createFighter function", () => {
   describe("When it's called", () => {
@@ -7,14 +6,14 @@ describe("Given the createFighter function", () => {
     const lastName = "Rodriguez";
     const age = 28;
     const image = "images/daenerys.webp";
-    const skillLevel = 10;
     const weapon = "Bitcoin";
+    const skillLevel = 10;
 
     test("Then it should return an alive fighter", () => {
-      const newFighter: Fighter = createFighter(
+      const newFighter: Fighter = new Fighter(
         { name, lastName, age, image },
-        skillLevel,
         weapon,
+        skillLevel,
       );
 
       expect(newFighter.isAlive).toBeTruthy();
@@ -23,10 +22,10 @@ describe("Given the createFighter function", () => {
     test("Then it should return a fighter who says 'Primero pego y luego pregunto'", () => {
       const expectedPhrase = "Primero pego y luego pregunto";
 
-      const newFighter: Fighter = createFighter(
+      const newFighter: Fighter = new Fighter(
         { name, lastName, age, image },
-        skillLevel,
         weapon,
+        skillLevel,
       );
 
       const phrase = newFighter.speak();
@@ -35,10 +34,10 @@ describe("Given the createFighter function", () => {
     });
 
     test("Then it should return a fighter who can die", () => {
-      const newFighter: Fighter = createFighter(
+      const newFighter: Fighter = new Fighter(
         { name, lastName, age, image },
-        skillLevel,
         weapon,
+        skillLevel,
       );
 
       newFighter.die();

@@ -1,7 +1,6 @@
-import createKing from "./factory/createKing.js";
-import { type King } from "./types";
+import King from "./King/King.js";
 
-export const joffrey: King = createKing(
+export const joffrey: King = new King(
   {
     name: "Joffrey",
     lastName: "Baratheon",
