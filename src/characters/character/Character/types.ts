@@ -5,8 +5,8 @@ export interface CharacterData {
   image: string;
 }
 
-export interface Character extends CharacterData {
-  phrase: string;
+export interface CharacterStructure {
+  characterData: CharacterData;
   isAlive: boolean;
   die: () => void;
   speak: () => string;
