@@ -1,7 +1,7 @@
-import King from "./King/King";
+import King from "./King";
 
 describe("Given the King class", () => {
-  describe("When called", () => {
+  describe("When an instance is created", () => {
     const name = "Aniol";
     const lastName = "Rodriguez";
     const age = 28;
