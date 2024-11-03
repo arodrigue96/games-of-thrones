@@ -7,10 +7,10 @@ const createApp = (characters: Character[]): HTMLElement => {
   appContainer.classList.add("main-container");
 
   const mainHeader = createMainHeader();
-  const cardContainer = createCharacterCardContainer(characters);
+  const characterCardContainer = createCharacterCardContainer(characters);
 
   appContainer.appendChild(mainHeader);
-  appContainer.appendChild(cardContainer);
+  appContainer.appendChild(characterCardContainer);
 
   return appContainer;
 };
