@@ -78,6 +78,11 @@ h2 {
   font-size: 1rem;
   position: relative;
   z-index: 1;
+  transition-duration: 1s;
+}
+
+.character-card:hover {
+  z-index: 0;
 }
 
 .character-card__overlay {
@@ -91,19 +96,16 @@ h2 {
   top: 0;
 }
 
+.character-card__overlay:hover {
+  z-index: 1;
+}
+
 .character-card__overlay-info {
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 20px;
   font-size: 1.25rem;
-}
-
-.character-card:hover {
-  z-index: 0;
-}
-.character-card__overlay:hover {
-  z-index: 1;
 }
 
 .character-card__image {
