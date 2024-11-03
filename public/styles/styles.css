@@ -28,6 +28,13 @@ h2 {
   font: inherit;
 }
 
+button {
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
 .root {
   display: flex;
   flex-direction: column;
@@ -87,9 +94,8 @@ h2 {
 
 .character-card__overlay {
   position: absolute;
-  background-color: #222;
+  background-color: #0007;
   border-radius: 5px;
-  opacity: 0.95;
   height: 100%;
   width: 100%;
   z-index: 0;
@@ -106,6 +112,7 @@ h2 {
   gap: 15px;
   padding: 20px;
   font-size: 1.25rem;
+  height: 250px;
 }
 
 .character-card__image {
@@ -137,4 +144,19 @@ h2 {
 
 .character-card__type {
   font-size: 1.25rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #070402;
+}
+
+.overlay__button {
+  background-color: #67331e;
+  font-size: 1.25rem;
+  padding: 10px;
+  border-radius: 5px;
 }
