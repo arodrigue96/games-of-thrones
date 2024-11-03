@@ -1,5 +1,5 @@
 import createMainHeader from "../header/createMainHeader.js";
-import { createCardContainer } from "../../characters/components/characterCard/createCharacterCard.js";
+import { createCardContainer } from "../../characters/components/characterCard/index.js";
 import { type Character } from "../../characters/character/Character/Character.js";
 
 const createApp = (characters: Character[]): HTMLElement => {

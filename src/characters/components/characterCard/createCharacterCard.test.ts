@@ -1,5 +1,5 @@
 import Fighter from "../../fighter/Fighter/Fighter.js";
-import createCharacterCard from "./createCharacterCard.js";
+import createCharacterCard from "./index.js";
 
 const screen = document.createElement("div");
 afterEach(() => {

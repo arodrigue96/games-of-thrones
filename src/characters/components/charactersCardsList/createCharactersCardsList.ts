@@ -1,6 +1,6 @@
 import { type Character } from "../../character/Character/Character.js";
-import createCharacterCard from "../characterCard/createCharacterCard.js";
-import createCharacterCardOverlay from "../characterCard/createCharacterCardOverlay.js";
+import createCharacterCard from "../characterCard/index.js";
+import createCharacterCardOverlay from "../characterCard/overflow/index.js";
 
 const createCharactersCardsList = (characters: Character[]): HTMLElement => {
   const cardsList = document.createElement("ul");
