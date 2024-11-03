@@ -18,6 +18,7 @@ ul {
 
 .characters-cards-list li {
   list-style-type: none;
+  position: relative;
 }
 
 h1,
@@ -75,6 +76,26 @@ h2 {
   box-shadow: 10px -3px 17px #000009;
   overflow: hidden;
   font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card__overlay {
+  position: absolute;
+  background-color: #222;
+  border-radius: 5px;
+  opacity: 0.6;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  top: 0;
+}
+
+.card:hover {
+  z-index: 0;
+}
+.card__overlay:hover {
+  z-index: 1;
 }
 
 .card__image {
