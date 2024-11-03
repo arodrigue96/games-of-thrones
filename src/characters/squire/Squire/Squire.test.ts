@@ -1,8 +1,8 @@
-import { daenerys } from "../fighter/data";
-import Squire from "./Squire/Squire";
+import { daenerys } from "../../fighter/data";
+import Squire from "./Squire";
 
 describe("Given the Squire class", () => {
-  describe("When called", () => {
+  describe("When an instance is created", () => {
     const name = "Aniol";
     const lastName = "Rodriguez";
     const age = 28;

@@ -1,5 +1,5 @@
-import Advisor from "./Advisor/Advisor";
-import { daenerys } from "../fighter/data";
+import Advisor from "./Advisor";
+import { daenerys } from "../../fighter/data";
 
 describe("Given the Advisor class", () => {
   const name = "Aniol";
@@ -7,7 +7,7 @@ describe("Given the Advisor class", () => {
   const age = 28;
   const image = "";
 
-  describe("When called", () => {
+  describe("When an instance is created", () => {
     test("Then it should return an alive Advisor", () => {
       const newAdvisor: Advisor = new Advisor(
         { name, lastName, age, image },

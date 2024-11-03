@@ -1,11 +1,11 @@
-import Fighter from "./Fighter/Fighter";
+import Fighter from "./Fighter";
 
 describe("Given the Fighter class", () => {
-  describe("When it's called", () => {
+  describe("When an instance is created", () => {
     const name = "Aniol";
     const lastName = "Rodriguez";
     const age = 28;
-    const image = "images/daenerys.webp";
+    const image = "";
     const weapon = "Bitcoin";
     const skillLevel = 10;
 
