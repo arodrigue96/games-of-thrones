@@ -1,6 +1,6 @@
 import { type Character } from "../../character/Character/Character.js";
 import createCharacterCard from "../characterCard/index.js";
-import createCharacterCardOverlay from "../characterCard/overflow/index.js";
+import { createCharacterCardOverlay } from "../characterCard/overlay/index.js";
 
 const createCharactersCardsList = (characters: Character[]): HTMLElement => {
   const characterCardsList = document.createElement("ul");
@@ -9,7 +9,7 @@ const createCharactersCardsList = (characters: Character[]): HTMLElement => {
   characters.forEach((character, position) => {
     const isLazyLoaded = position >= 3;
     const characterCard = createCharacterCard(character, isLazyLoaded);
-    const characterCardOverlay = createCharacterCardOverlay();
+    const characterCardOverlay = createCharacterCardOverlay(character);
 
     characterCardsList.appendChild(characterCard);
     characterCard.appendChild(characterCardOverlay);
