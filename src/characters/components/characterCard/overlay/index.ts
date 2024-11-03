@@ -8,12 +8,22 @@ import createFullName from "../createFullName.js";
 export const createCharacterCardOverlay = (
   character: Character,
 ): HTMLElement => {
-  const characterCard = document.createElement("article");
+  const characterCard = document.createElement("div");
   characterCard.classList.add("character-card__overlay");
 
   const overlayCharacterData = createOverlayCharacterData(character);
-
   characterCard.appendChild(overlayCharacterData);
+
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("button-container");
+
+  buttonContainer.innerHTML = `
+
+    <button class="overlay__button">speak</button>
+    <button class="overlay__button">die</button>
+  `;
+
+  characterCard.appendChild(buttonContainer);
 
   return characterCard;
 };
