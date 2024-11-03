@@ -2,75 +2,77 @@ import { type Character } from "../../character/Character/Character";
 import createCharactersCardsList from "../charactersCardsList/createCharactersCardsList.js";
 import createFullName from "./createFullName.js";
 
-export const createCardContainer = (characters: Character[]): HTMLElement => {
-  const cardContainer = document.createElement("main");
-  cardContainer.classList.add("character-card-container");
-  cardContainer.appendChild(createCharactersCardsList(characters));
+export const createCharacterCardContainer = (
+  characters: Character[],
+): HTMLElement => {
+  const characterCardContainer = document.createElement("main");
+  characterCardContainer.classList.add("character-card-container");
+  characterCardContainer.appendChild(createCharactersCardsList(characters));
 
-  return cardContainer;
+  return characterCardContainer;
 };
 
-const createCardImage = (
+const createCharacterCardImage = (
   character: Character,
   isLazyLoaded?: boolean,
 ): HTMLImageElement => {
   const { name, lastName, image } = character.characterData;
   const { isAlive } = character;
 
-  const cardImage = document.createElement("img");
-  cardImage.classList.add("character-card__image");
-  cardImage.src = image;
-  cardImage.alt = `Character image of ${createFullName(name, lastName)}`;
-  cardImage.width = 340;
-  cardImage.height = 250;
+  const characterCardImage = document.createElement("img");
+  characterCardImage.classList.add("character-card__image");
+  characterCardImage.src = image;
+  characterCardImage.alt = `Character image of ${createFullName(name, lastName)}`;
+  characterCardImage.width = 340;
+  characterCardImage.height = 250;
 
   if (isLazyLoaded) {
-    cardImage.loading = "lazy";
+    characterCardImage.loading = "lazy";
   }
 
   if (!isAlive) {
-    cardImage.classList.add("character-card__image--dead");
+    characterCardImage.classList.add("character-card__image--dead");
   }
 
-  return cardImage;
+  return characterCardImage;
 };
 
-const createCardInfo = (character: Character): HTMLDivElement => {
+const createCharacterCardInfo = (character: Character): HTMLDivElement => {
   const { name, lastName } = character.characterData;
 
-  const cardInfo = document.createElement("div");
-  cardInfo.classList.add("character-card__full-info");
+  const characterCardInfo = document.createElement("div");
+  characterCardInfo.classList.add("character-card__full-info");
 
-  cardInfo.innerHTML = `
+  characterCardInfo.innerHTML = `
   <h2 class="character-card__title">${createFullName(name, lastName)}</h2>`;
 
-  const cardAge = createCardAge(character);
-  const cardState = createCardState(character);
+  const characterCardAge = createCharacterCardAge(character);
+  const characterCardState = createCharacterCardState(character);
 
-  cardInfo.appendChild(cardAge);
-  cardInfo.appendChild(cardState);
+  characterCardInfo.appendChild(characterCardAge);
+  characterCardInfo.appendChild(characterCardState);
 
-  return cardInfo;
+  return characterCardInfo;
 };
 
-const createCardAge = (character: Character): HTMLElement => {
+const createCharacterCardAge = (character: Character): HTMLElement => {
   const { age } = character.characterData;
 
-  const cardAge = document.createElement("span");
-  cardAge.textContent = `Age: ${age} years`;
+  const characterCardAge = document.createElement("span");
+  characterCardAge.textContent = `Age: ${age} years`;
 
-  return cardAge;
+  return characterCardAge;
 };
 
-const createCardState = (character: Character): HTMLDivElement => {
+const createCharacterCardState = (character: Character): HTMLDivElement => {
   const { isAlive } = character;
   const characterState = `icons/${isAlive ? "thumb-up-fill.svg" : "thumb-down-fill.svg"}`;
   const characterAlt = `${isAlive ? "Character is alive" : "Character is dead"}`;
 
-  const cardInfo = document.createElement("div");
-  cardInfo.classList.add("character-card__info");
+  const characterCardInfo = document.createElement("div");
+  characterCardInfo.classList.add("character-card__info");
 
-  cardInfo.innerHTML = `
+  characterCardInfo.innerHTML = `
   <span>
     State:
     <img
@@ -82,14 +84,14 @@ const createCardState = (character: Character): HTMLDivElement => {
   </span>
   `;
 
-  cardInfo.appendChild(createCharacterEmoji(character));
+  characterCardInfo.appendChild(createCharacterCardEmoji(character));
 
-  return cardInfo;
+  return characterCardInfo;
 };
 
-const createCharacterEmoji = (character: Character): HTMLElement => {
-  const characterEmoji = document.createElement("span");
-  characterEmoji.classList.add("character-card__type");
+const createCharacterCardEmoji = (character: Character): HTMLElement => {
+  const characterCardEmoji = document.createElement("span");
+  characterCardEmoji.classList.add("character-card__type");
 
   const king = "Vais a morir todos";
   const fighter = "Primero pego y luego pregunto";
@@ -97,22 +99,22 @@ const createCharacterEmoji = (character: Character): HTMLElement => {
   const squire = "Soy un loser";
 
   if (character.speak() === king) {
-    characterEmoji.textContent = "👑";
+    characterCardEmoji.textContent = "👑";
   }
 
   if (character.speak() === fighter) {
-    characterEmoji.textContent = "🗡";
+    characterCardEmoji.textContent = "🗡";
   }
 
   if (character.speak() === advisor) {
-    characterEmoji.textContent = "🎓";
+    characterCardEmoji.textContent = "🎓";
   }
 
   if (character.speak() === squire) {
-    characterEmoji.textContent = "🛡️";
+    characterCardEmoji.textContent = "🛡️";
   }
 
-  return characterEmoji;
+  return characterCardEmoji;
 };
 
 const createCharacterCard = (
@@ -124,11 +126,11 @@ const createCharacterCard = (
   const characterCard = document.createElement("article");
   characterCard.classList.add("character-card");
 
-  const cardImage = createCardImage(character, isLazyLoaded);
-  const cardInfo = createCardInfo(character);
+  const characterCardImage = createCharacterCardImage(character, isLazyLoaded);
+  const characterCardInfo = createCharacterCardInfo(character);
 
-  characterCard.appendChild(cardImage);
-  characterCard.appendChild(cardInfo);
+  characterCard.appendChild(characterCardImage);
+  characterCard.appendChild(characterCardInfo);
 
   card.appendChild(characterCard);
 

@@ -22,25 +22,25 @@ describe("Given the component characterCard", () => {
     );
 
     test("Then it should show Jaime's image", () => {
-      const expectedAltImage = /Character image of Jaime Lannister/i;
+      const expectedCharacterAltImage = /Character image of Jaime Lannister/i;
 
       const characterCard = createCharacterCard(jaime);
       screen.appendChild(characterCard);
       const image = screen.querySelector("img");
 
       expect(image).not.toBeNull();
-      expect(image?.alt).toMatch(expectedAltImage);
+      expect(image?.alt).toMatch(expectedCharacterAltImage);
     });
 
     test("Then it should show 'Jaime Lannister' name inside a heading", () => {
-      const expectedFullName = /Jaime Lannister/i;
+      const expectedCharacterFullName = /Jaime Lannister/i;
 
       const characterCard = createCharacterCard(jaime);
       screen.appendChild(characterCard);
       const fullName = screen.querySelector("h2");
 
       expect(fullName).not.toBeNull();
-      expect(fullName?.textContent).toMatch(expectedFullName);
+      expect(fullName?.textContent).toMatch(expectedCharacterFullName);
     });
 
     test("Then it should show thumb up if he is alive", () => {
