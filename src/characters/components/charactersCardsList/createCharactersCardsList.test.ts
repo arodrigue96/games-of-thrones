@@ -41,20 +41,20 @@ describe("Given the componenet characterCardsList", () => {
       screen.appendChild(charactersCards);
       const images = [...screen.querySelectorAll("img")];
 
-      const doesPepeImageExists = images.some(
+      const doesPepeImageExist = images.some(
         (image) =>
           image.alt ===
           `Character image of ${createFullName(pepe.characterData.name, pepe.characterData.lastName)}`,
       );
 
-      const doesLuisImageExists = images.some(
+      const doesLuisImageExist = images.some(
         (image) =>
           image.alt ===
           `Character image of ${createFullName(luis.characterData.name, luis.characterData.lastName)}`,
       );
 
-      expect(doesPepeImageExists).toBeTruthy();
-      expect(doesLuisImageExists).toBeTruthy();
+      expect(doesPepeImageExist).toBeTruthy();
+      expect(doesLuisImageExist).toBeTruthy();
     });
 
     test("Then it should show Pepe Laemaez y Luis Luisez name's inside a heading", () => {
