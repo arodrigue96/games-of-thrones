@@ -49,7 +49,7 @@ h2 {
   font-weight: 600;
 }
 
-.card-container {
+.character-card-container {
   padding: 30px 40px;
 }
 
@@ -70,7 +70,7 @@ h2 {
   }
 }
 
-.card {
+.character-card {
   background-color: #331c0f;
   border-radius: 5px;
   box-shadow: 10px -3px 17px #000009;
@@ -80,7 +80,7 @@ h2 {
   z-index: 1;
 }
 
-.card__overlay {
+.character-card__overlay {
   position: absolute;
   background-color: #222;
   border-radius: 5px;
@@ -91,40 +91,40 @@ h2 {
   top: 0;
 }
 
-.card:hover {
+.character-card:hover {
   z-index: 0;
 }
-.card__overlay:hover {
+.character-card__overlay:hover {
   z-index: 1;
 }
 
-.card__image {
+.character-card__image {
   max-width: 100%;
   object-fit: cover;
   object-position: top;
 }
 
-.card__full-info {
+.character-card__full-info {
   padding: 20px;
 }
 
-.card__title {
+.character-card__title {
   font-size: 1.5rem;
   font-weight: 600;
   padding-bottom: 20px;
 }
 
-.card__info {
+.character-card__info {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 5px;
 }
 
-.card__image--dead {
+.character-card__image--dead {
   transform: rotate(180deg);
 }
 
-.card__type {
+.character-card__type {
   font-size: 1.25rem;
 }

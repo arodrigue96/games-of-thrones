@@ -4,7 +4,7 @@ import createFullName from "./createFullName.js";
 
 export const createCardContainer = (characters: Character[]): HTMLElement => {
   const cardContainer = document.createElement("main");
-  cardContainer.classList.add("card-container");
+  cardContainer.classList.add("character-card-container");
   cardContainer.appendChild(createCharactersCardsList(characters));
 
   return cardContainer;
@@ -18,7 +18,7 @@ const createCardImage = (
   const { isAlive } = character;
 
   const cardImage = document.createElement("img");
-  cardImage.classList.add("card__image");
+  cardImage.classList.add("character-card__image");
   cardImage.src = image;
   cardImage.alt = `Character image of ${createFullName(name, lastName)}`;
   cardImage.width = 340;
@@ -29,7 +29,7 @@ const createCardImage = (
   }
 
   if (!isAlive) {
-    cardImage.classList.add("card__image--dead");
+    cardImage.classList.add("character-card__image--dead");
   }
 
   return cardImage;
@@ -39,10 +39,10 @@ const createCardInfo = (character: Character): HTMLDivElement => {
   const { name, lastName } = character.characterData;
 
   const cardInfo = document.createElement("div");
-  cardInfo.classList.add("card__full-info");
+  cardInfo.classList.add("character-card__full-info");
 
   cardInfo.innerHTML = `
-  <h2 class="card__title">${createFullName(name, lastName)}</h2>`;
+  <h2 class="character-card__title">${createFullName(name, lastName)}</h2>`;
 
   const cardAge = createCardAge(character);
   const cardState = createCardState(character);
@@ -57,7 +57,6 @@ const createCardAge = (character: Character): HTMLElement => {
   const { age } = character.characterData;
 
   const cardAge = document.createElement("span");
-  cardAge.classList.add("card__age");
   cardAge.textContent = `Age: ${age} years`;
 
   return cardAge;
@@ -69,10 +68,10 @@ const createCardState = (character: Character): HTMLDivElement => {
   const characterAlt = `${isAlive ? "Character is alive" : "Character is dead"}`;
 
   const cardInfo = document.createElement("div");
-  cardInfo.classList.add("card__info");
+  cardInfo.classList.add("character-card__info");
 
   cardInfo.innerHTML = `
-  <span class= "card__state">
+  <span>
     State:
     <img
       src="${characterState}"
@@ -90,7 +89,7 @@ const createCardState = (character: Character): HTMLDivElement => {
 
 const createCharacterEmoji = (character: Character): HTMLElement => {
   const characterEmoji = document.createElement("span");
-  characterEmoji.classList.add("card__type");
+  characterEmoji.classList.add("character-card__type");
 
   const king = "Vais a morir todos";
   const fighter = "Primero pego y luego pregunto";
@@ -123,7 +122,7 @@ const createCharacterCard = (
   const card = document.createElement("li");
 
   const characterCard = document.createElement("article");
-  characterCard.classList.add("card");
+  characterCard.classList.add("character-card");
 
   const cardImage = createCardImage(character, isLazyLoaded);
   const cardInfo = createCardInfo(character);
